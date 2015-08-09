@@ -1,0 +1,186 @@
+@charset "UTF-8";
+/***************************
+ * Media Query Classes
+ * ************************/
+@media only screen and (min-width: 1024px) {
+  .hide-on-large {
+    display: none !important;
+  }
+
+  .show-on-large {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: inherit !important;
+  }
+
+  .show-med-only {
+    display: none !important;
+  }
+
+  .show-small-only {
+    display: none !important;
+  }
+
+  .show-med-and-large {
+    display: inherit !important;
+  }
+
+  .show-med-and-small {
+    display: none !important;
+  }
+
+  h1, p {
+    font-size: 5em;
+  }
+
+  a {
+    font-size: 32px;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  .hide-on-med {
+    display: none !important;
+  }
+
+  .show-on-med {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: none !important;
+  }
+
+  .show-med-only {
+    display: inherit !important;
+  }
+
+  .show-small-only {
+    display: none !important;
+  }
+
+  .show-med-and-large {
+    display: inherit !important;
+  }
+
+  .show-med-and-small {
+    display: inherit !important;
+  }
+
+  h1, p {
+    font-size: 5em;
+  }
+
+  a {
+    font-size: 32px;
+    text-decoration: underline;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .hide-on-small {
+    display: none !important;
+  }
+
+  .show-on-small {
+    display: inherit !important;
+  }
+
+  .show-large-only {
+    display: none !important;
+  }
+
+  .show-med-only {
+    display: none !important;
+  }
+
+  .show-small-only {
+    display: inherit !important;
+  }
+
+  .show-med-and-large {
+    display: none !important;
+  }
+
+  .show-med-and-small {
+    display: inherit !important;
+  }
+
+  .center-on-small-only {
+    text-align: center;
+  }
+
+  h1, p {
+    font-size: 48px;
+  }
+
+  p {
+    font-size: 32px;
+  }
+
+  a {
+    font-size: 16px;
+    text-decoration: underline;
+  }
+}
+* {
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "IPA Pゴシック", "IPAPGothic", "sans", sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+h1, p {
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+}
+
+a {
+  color: #fff;
+}
+
+@font-face {
+  font-family: 'Montepetrum';
+  src: url("/fonts/Montepetrum regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.montepetrum {
+  font-family: 'Montepetrum';
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #212121;
+  -webkit-text-size-abjust: 100%;
+  position: relative;
+  height: auto !important;
+  min-height: 100%;
+}
+
+footer {
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  bottom: 0;
+}
+
+#copyright {
+  font-style: normal;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=nf.css.map */

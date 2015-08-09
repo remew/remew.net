@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@mixin split($num) {
+	.splits {
+		@for $i from 1 through $num {
+			.split#{$i}of#{$num} {
+				float:left;
+				width:#{100% * $i / $num};
+			}
+		}
+		&:after {
+			display:block;
+			clear:both;
+			content:"";
+		}
+	}
+}
+
+@mixin grid($num) {
+	.grids {
+		$CLEARANCE:2%;
+		@for $i from 1 through $num {
+			.grid#{$i}of#{$num} {
+				float:left;
+				width:#{(100% - $CLEARANCE * $num) * $i / $num + $CLEARANCE * ($i - 1)};
+				margin-left:$CLEARANCE / 2;
+				margin-right:$CLEARANCE / 2;
+				//&:first-child {
+				//	margin-left:0;
+				//}
+				//&:last-child {
+				//	margin-right:0;
+				//}
+			}
+		}
+		&:after {
+			display:block;
+			clear:both;
+			content:"";
+		}
+	}
+}
