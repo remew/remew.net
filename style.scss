@@ -130,7 +130,7 @@ footer {
 	font-style:normal;
 }
 
-@keyframes 'welcome_fadein' {
+@keyframes welcome_fadein {
 	0% {
 		top:25%;
 		opacity:0;
@@ -140,7 +140,7 @@ footer {
 		opacity:1;
 	}
 }
-@keyframes 'welcome_fadeout' {
+@keyframes welcome_fadeout {
 	0% {
 		top:0%;
 		opacity:1;
