@@ -1,5 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
+import App from './App';
 
-render(<h1>Hello, React world!!</h1>, document.body.appendChild(document.createElement('div')));
+render(
+  <App />,
+  document.body.appendChild(document.createElement('div'))
+);
 
