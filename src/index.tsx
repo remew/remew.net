@@ -1,5 +1,5 @@
-import pow2 from './pow2';
+import React from 'react';
+import {render} from 'react-dom';
 
-const v: number = 42;
+render(<h1>Hello, React world!!</h1>, document.body.appendChild(document.createElement('div')));
 
-console.log(pow2(v));
