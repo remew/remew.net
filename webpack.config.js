@@ -1,6 +1,9 @@
 'use strict';
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const PreloadPlugin = require('preload-webpack-plugin');
+
+const isImageRegExp = /\.(png|jpg|svg)$/;
 
 module.exports = {
   mode: 'development',
@@ -37,7 +40,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: isImageRegExp,
         use: [
           {
             loader: 'file-loader',
@@ -50,6 +53,16 @@ module.exports = {
   },
   plugins: [
     new HtmlPlugin({
+    }),
+    new PreloadPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      as(entry) {
+        if (isImageRegExp.test(entry)) {
+          return 'image';
+        }
+        return 'script';
+      },
     }),
   ],
   resolve: {
