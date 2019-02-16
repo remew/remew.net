@@ -36,6 +36,16 @@ module.exports = {
           // 'ts-loader',
         ],
       },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+            },
+          },
+        ],
+      }
     ],
   },
   plugins: [
