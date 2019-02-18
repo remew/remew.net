@@ -1,3 +1,5 @@
+export type ThemeType = 'light' | 'dark';
+
 export type ThemeScheme = {
   backgroundImageUrl: string,
 
