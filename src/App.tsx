@@ -1,22 +1,12 @@
 import React from 'react';
 
-import Footer from './Components/Footer';
+import {useThemeContextValue} from './Hooks';
+import ThemeContext from './Themes/context';
 
 export default function App(props: any): any {
-    return (
-      <>
-        <Footer />
-        <style jsx global>{`
-          html, body {
-            background: #212121;
-            height: 100%;
-            position:relative;
-          }
-          body {
-            margin: 0;
-            -webkit-text-size-abjust:100%;
-          }
-        `}</style>
-      </>
-    );
+  const contextValue = useThemeContextValue();
+  return (
+    <ThemeContext.Provider value={contextValue}>
+    </ThemeContext.Provider>
+  );
 }
