@@ -4,6 +4,6 @@ import App from './App';
 
 render(
   <App />,
-  document.body.appendChild(document.createElement('div'))
+  document.getElementById('root')
 );
 

@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     new HtmlPlugin({
+      template: path.join(__dirname, 'template/index.html'),
     }),
     new PreloadPlugin({
       rel: 'preload',
