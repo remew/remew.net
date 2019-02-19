@@ -68,4 +68,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+  devServer: {
+    host: '0.0.0.0',
+  },
 };
