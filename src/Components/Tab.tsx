@@ -31,6 +31,9 @@ export function TabGroup(props: any) {
           margin: 0;
           padding: 0;
         }
+        ul > :global(li):first-child {
+          border-left: none;
+        }
       `}</style>
     </TabSelectedIndexContext.Provider>
   );
@@ -49,9 +52,12 @@ export function Tab(props: TabProps) {
         <style jsx>{`
           li {
             background: ${theme.tab.backgroundColor};
+            border-bottom: solid 1px ${theme.tab.border};
+            border-left: solid 1px ${theme.tab.border};
             flex-grow: 1;
           }
           li.selected {
+            border-bottom: none;
           }
           a {
             align-items: center;
