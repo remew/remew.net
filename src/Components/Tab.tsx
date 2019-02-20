@@ -1,4 +1,5 @@
 import React, {useCallback, useState, useContext} from 'react';
+import ThemeContext from '../Themes/context';
 
 export type TabProps = {
     label: string;
@@ -37,6 +38,7 @@ export function TabGroup(props: any) {
 
 export function Tab(props: TabProps) {
     const {index, setIndex} = useContext(TabSelectedIndexContext);
+    const {theme} = useContext(ThemeContext);
     const onClick = useCallback(e => {
         e.preventDefault();
         setIndex(props.index);
@@ -46,15 +48,14 @@ export function Tab(props: TabProps) {
         <a href={'#'} onClick={onClick}>{props.label}</a>
         <style jsx>{`
           li {
-            background: #f00; // TODO: use theme context value;
+            background: ${theme.tab.backgroundColor};
             flex-grow: 1;
           }
           li.selected {
-            background: #0f0; // TODO: use theme context value;
           }
           a {
             align-items: center;
-            color: #000; // TODO: use theme context value;
+            color: ${theme.tab.textColor};
             display: flex;
             height: 100%;
             justify-content: center;
