@@ -34,6 +34,9 @@ export function TabGroup(props: any) {
         ul > :global(li):first-child {
           border-left: none;
         }
+        div {
+          flex: 1 0 0;
+        }
       `}</style>
     </TabSelectedIndexContext.Provider>
   );
