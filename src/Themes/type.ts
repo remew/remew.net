@@ -5,6 +5,12 @@ export type ThemeScheme = {
 
   contentBackgroundColor: string,
 
+  tab: {
+    backgroundColor: string,
+    textColor: string,
+    border: string,
+  },
+
   footerBackgroundColor: string,
   footerTextColor: string,
 

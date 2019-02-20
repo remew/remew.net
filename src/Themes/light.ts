@@ -7,6 +7,12 @@ const theme: ThemeScheme = {
 
   contentBackgroundColor: '#fff',
 
+  tab: {
+    backgroundColor: '#fff',
+    textColor: '#212121',
+    border: '#747474',
+  },
+
   footerBackgroundColor: '#eee',
   footerTextColor: '#212121',
 
