@@ -56,7 +56,7 @@ module.exports = {
       template: path.join(__dirname, 'template/index.html'),
     }),
     new PreloadPlugin({
-      rel: 'preload',
+      rel: 'prefetch',
       include: 'allAssets',
       as(entry) {
         if (isImageRegExp.test(entry)) {
