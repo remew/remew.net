@@ -26,6 +26,7 @@ export default function Main(props: any): any {
             height: 100%;
           }
           * {
+            position: relative;
             transition: background-image 0.3s,
                         background-color 0.3s,
                         color 0.3s;
