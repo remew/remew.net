@@ -57,15 +57,14 @@ export function Tab(props: TabProps) {
     return (
       <li className={index === props.index ? 'selected' : ''}>
         <a href={'#'} onClick={onClick}>{props.label}</a>
+        <div className={index === props.index ? 'border selected' : 'border'} />
         <style jsx>{`
           li {
             background: ${theme.tab.backgroundColor};
-            border-bottom: solid 1px ${theme.tab.border};
-            border-left: solid 1px ${theme.tab.border};
             flex-grow: 1;
           }
           li.selected {
-            border-bottom: none;
+            background: ${theme.tab.selectedBackgroundColor};
           }
           a {
             align-items: center;
@@ -74,6 +73,19 @@ export function Tab(props: TabProps) {
             height: 100%;
             justify-content: center;
             text-decoration: none;
+          }
+          .border {
+            position: absolute;
+            bottom: 0;
+            width: 0px;
+            margin-left: 50%;
+            height: 4px;
+            transition: 0.3s;
+            background-color: ${theme.tab.border};
+          }
+          .border.selected {
+            margin-left: 0;
+            width: 100%;
           }
         `}</style>
       </li>
