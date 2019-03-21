@@ -8,15 +8,19 @@ export type TabProps = {
 }
 
 const noop = () => {};
-const TabSelectedIndexContext = React.createContext({index: 0, setIndex: noop});
+const TabContext = React.createContext({index: 0, setIndex: noop});
 
 export function TabGroup(props: any) {
   const [index, setIndex] = useState(0);
+
+  // get selected child component
   const selectedTab = props.children[index];
+
   return (
-    <TabSelectedIndexContext.Provider value={{index, setIndex}}>
+    <TabContext.Provider value={{index, setIndex}}>
       <ul>
         {React.Children.map(props.children, (child, i) => {
+            // add `index` prop
             return React.cloneElement(child, {index: i});
         })}
       </ul>
@@ -38,17 +42,18 @@ export function TabGroup(props: any) {
           flex: 1 0 0;
         }
       `}</style>
-    </TabSelectedIndexContext.Provider>
+    </TabContext.Provider>
   );
 }
 
 export function Tab(props: TabProps) {
-    const {index, setIndex} = useContext(TabSelectedIndexContext);
+    const {index, setIndex} = useContext(TabContext);
     const {theme} = useContext(ThemeContext);
     const onClick = useCallback(e => {
         e.preventDefault();
         setIndex(props.index);
     }, []);
+
     return (
       <li className={index === props.index ? 'selected' : ''}>
         <a href={'#'} onClick={onClick}>{props.label}</a>
