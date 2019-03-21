@@ -10,7 +10,7 @@ const theme: ThemeScheme = {
   tab: {
     backgroundColor: '#212121',
     textColor: '#fff',
-    border: '#747474',
+    border: '#8c2300',
   },
 
   footerBackgroundColor: '#000',
