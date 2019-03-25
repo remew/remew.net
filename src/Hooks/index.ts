@@ -16,7 +16,7 @@ function getThemeValue(type: ThemeType): ThemeScheme {
 }
 
 export function useThemeContextValue() {
-  const [themeType, setThemeType] = useState('light' as ThemeType);
+  const [themeType, setThemeType] = useState('dark' as ThemeType);
   const changeTheme = useCallback((type: ThemeType) => {
     setThemeType(type);
   }, []);
