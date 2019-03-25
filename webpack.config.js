@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const PreloadPlugin = require('preload-webpack-plugin');
 
-const isImageRegExp = /\.(png|jpg|svg)$/;
+const isFileLoaderRegExp = /\.(png|jpg|svg|ttf)$/;
 
 module.exports = {
   mode: 'development',
@@ -40,7 +40,7 @@ module.exports = {
         ],
       },
       {
-        test: isImageRegExp,
+        test: isFileLoaderRegExp,
         use: [
           {
             loader: 'file-loader',
