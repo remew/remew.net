@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5432:5432
+  app:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app:cached
+      - node_modules-cache:/app/node_modules
+      - next-cache:/app/.next
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+    tty: true
+    stdin_open: true
+    command: /bin/sh -c "yarn dev"
+volumes:
+  node_modules-cache:
+  next-cache:
