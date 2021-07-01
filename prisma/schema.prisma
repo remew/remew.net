@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ArticleSyntax {
+  MARKDOWN
+  HTML
+  RAW
+}
+
+model Article {
+  id          String        @id @default(uuid())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  publishedAt DateTime?
+  published   Boolean       @default(false)
+  syntax      ArticleSyntax
+  title       String
+  slug        String?       @unique
+  content     String
+  tags        Tag[]
+}
+
+model Tag {
+  id       String    @id @default(uuid())
+  name     String
+  articles Article[]
+}
