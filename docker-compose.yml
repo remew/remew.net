@@ -19,6 +19,7 @@ services:
       - .:/app:cached
       - node_modules-cache:/app/node_modules
       - next-cache:/app/.next
+      - ./node_modules/@prisma/client:/app/node_modules/@prisma/client
     environment:
       DATABASE_URL: ${DATABASE_URL}
     tty: true
