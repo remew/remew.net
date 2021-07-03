@@ -1,3 +1,5 @@
+import { tmpdir } from 'os';
+import { join } from 'path';
 import { NextApiRequest, NextApiResponse, PageConfig } from 'next';
 import { withApiAuthRequired } from '@auth0/nextjs-auth0';
 import multer from 'multer';
@@ -8,7 +10,7 @@ interface NextApiRequestWithFile extends NextApiRequest {
 }
 
 const upload = multer({
-  dest: 'tmp',
+  dest: join(tmpdir(), 'remew-net-upload'),
   limits: {
     fileSize: 100 * 1024 * 1024,
   },
