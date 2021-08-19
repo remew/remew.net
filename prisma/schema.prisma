@@ -34,3 +34,11 @@ model Tag {
   name     String
   articles Article[]
 }
+
+model Image {
+  id         String @id @default(uuid())
+  width      Int
+  height     Int
+  blurBase64 String
+  path       String
+}
